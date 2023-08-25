@@ -83,6 +83,43 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
     socket.emit('light3',0);
   }
 
+  if(WINCH1UP.readSync())
+  {
+    socket.emit('winch1Up',1);
+  }else{
+    socket.emit('winch1Up',0);
+  }
+
+  if(WINCH2UP.readSync())
+  {
+    socket.emit('winch2Up',1);
+  }else{
+    socket.emit('winch2Up',0);
+  }
+  if(WINCH3UP.readSync())
+  {
+    socket.emit('winch3Up',1);
+  }else{
+    socket.emit('winch3Up',0);
+  }
+  if(WINCH4UP.readSync())
+  {
+    socket.emit('winch4Up',1);
+  }else{
+    socket.emit('winch4Up',0);
+  }
+  if(WINCH5UP.readSync())
+  {
+    socket.emit('winch5Up',1);
+  }else{
+    socket.emit('winch5Up',0);
+  }
+  if(WINCH6UP.readSync())
+  {
+    socket.emit('winch6Up',1);
+  }else{
+    socket.emit('winch6Up',0);
+  }
 
   socket.on('light', function(data) { //get light switch status from client
     lightvalue = data;
