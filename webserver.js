@@ -121,6 +121,51 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
     socket.emit('winch6Up',0);
   }
 
+  if(WINCH1DW.readSync())
+  {
+    socket.emit('winch1Dw',1);
+  }else{
+    socket.emit('winch1Dw',0);
+  }
+
+  if(WINCH2DW.readSync())
+  {
+    socket.emit('winch2Dw',1);
+  }else{
+    socket.emit('winch2Dw',0);
+  }
+
+  if(WINCH3DW.readSync())
+  {
+    socket.emit('winch3Dw',1);
+  }else{
+    socket.emit('winch3Dw',0);
+  }
+
+  if(WINCH4DW.readSync())
+  {
+    socket.emit('winch4Dw',1);
+  }else{
+    socket.emit('winch4Dw',0);
+  }
+
+  if(WINCH5DW.readSync())
+  {
+    socket.emit('winch5Dw',1);
+  }else{
+    socket.emit('winch5Dw',0);
+  }
+
+  if(WINCH6DW.readSync())
+  {
+    socket.emit('winch6Dw',1);
+  }else{
+    socket.emit('winch6Dw',0);
+  }
+
+
+
+
   socket.on('light', function(data) { //get light switch status from client
     lightvalue = data;
     if (lightvalue != LED.readSync()) { //only change LED if status has changed
