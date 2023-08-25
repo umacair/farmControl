@@ -12,12 +12,12 @@ var WINCH3UP = new Gpio(10,'out');
 var WINCH4UP = new Gpio(11,'out');
 var WINCH5UP = new Gpio(12,'out');
 var WINCH6UP = new Gpio(13,'out');
-var WINCH1DW = new Gpio(8,'out');
-var WINCH2DW = new Gpio(9,'out');
-var WINCH3DW = new Gpio(10,'out');
-var WINCH4DW = new Gpio(11,'out');
-var WINCH5DW = new Gpio(12,'out');
-var WINCH6DW = new Gpio(13,'out');
+var WINCH1DW = new Gpio(16,'out');
+var WINCH2DW = new Gpio(17,'out');
+var WINCH3DW = new Gpio(18,'out');
+var WINCH4DW = new Gpio(19,'out');
+var WINCH5DW = new Gpio(20,'out');
+var WINCH6DW = new Gpio(21,'out');
 
 //var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
@@ -58,7 +58,30 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   var winch4stvalue = 0;
   var winch5stvalue = 0;
   var winch6stvalue = 0;
- 
+  if( LED.readSync())
+  {
+    socket.emit('light',1);
+  }else{
+    socket.emit('light',0);
+  }
+  if( LIGHT1.readSync())
+  {
+    socket.emit('light1',1);
+  }else{
+    socket.emit('light1',0);
+  }
+  if( LIGHT2.readSync())
+  {
+    socket.emit('light2',1);
+  }else{
+    socket.emit('light2',0);
+  }
+  if( LIGHT3.readSync())
+  {
+    socket.emit('light3',1);
+  }else{
+    socket.emit('light3',0);
+  }
 
 
   socket.on('light', function(data) { //get light switch status from client
