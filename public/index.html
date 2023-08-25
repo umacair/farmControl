@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Farm contoller</h1>
+<p><input type="checkbox" id="light1">Light1</p>
+<p><input type="checkbox" id="light2">Light2</p>
+<p><input type="checkbox" id="light3">Light3</p>
+<p><input type="checkbox" id="winch1Up">winch1Up</p>
+<p><input type="checkbox" id="winch1Dw">winch1Dw</p>
+<p><input type="checkbox" id="winch2Up">winch2Up</p>
+<p><input type="checkbox" id="winch2Dw">winch2Dw</p>
+<p><input type="checkbox" id="winch3Up">winch3Up</p>
+<p><input type="checkbox" id="winch3Dw">winch3Dw</p>
+<p><input type="checkbox" id="winch4Up">winch4Up</p>
+<p><input type="checkbox" id="winch4Dw">winch4Dw</p>
+<p><input type="checkbox" id="winch5Up">winch5Up</p>
+<p><input type="checkbox" id="winch5Dw">winch5Dw</p>
+<p><input type="checkbox" id="winch6Up">winch6Up</p>
+<p><input type="checkbox" id="winch6Dw">winch6Dw</p>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script>
+var socket = io(); //load socket.io-client and connect to the host that serves the page
+window.addEventListener("load", function(){ //when page loads
+  var lightbox = document.getElementById("light");
+  lightbox.addEventListener("change", function() { //add event listener for when checkbox changes
+    socket.emit("light", Number(this.checked)); //send button status to server (as 1 or 0)
+    socket.emit("light1",Number(this.checked));
+    socket.emit("light2",Number(this.checked));
+    socket.emit("light3",Number(this.checked));
+    socket.emit("winch1Up",Number(this.checked));
+    socket.emit("winch1Dw",Number(this.checked));
+    socket.emit("winch2Up",Number(this.checked));
+    socket.emit("winch2Dw",Number(this.checked));
+    socket.emit("winch3Up",Number(this.checked));
+    socket.emit("winch3Dw",Number(this.checked));
+    socket.emit("winch4Up",Number(this.checked));
+    socket.emit("winch4Dw",Number(this.checked));
+    socket.emit("winch5Up",Number(this.checked));
+    socket.emit("winch5Dw",Number(this.checked));
+    socket.emit("winch6Up",Number(this.checked));
+    socket.emit("winch6Dw",Number(this.checked));
+
+  });
+});
+socket.on('light', function (data) { //get button status from client
+  document.getElementById("light").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("light", data); //send push button status to back to server
+});
+socket.on('light1', function (data) { //get button status from client
+  document.getElementById("light1").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("light1", data); //send push button status to back to server
+});
+socket.on('light2', function (data) { //get button status from client
+  document.getElementById("light2").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("light2", data); //send push button status to back to server
+});
+socket.on('light3', function (data) { //get button status from client
+  document.getElementById("light3").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("light3", data); //send push button status to back to server
+});
+socket.on('winch1Up', function (data) { //get button status from client
+  document.getElementById("winch1Up").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch1Up", data); //send push button status to back to server
+});
+socket.on('winch2Up', function (data) { //get button status from client
+  document.getElementById("winch2Up").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch2Up", data); //send push button status to back to server
+});
+socket.on('winch3Up', function (data) { //get button status from client
+  document.getElementById("winch3Up").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch3Up", data); //send push button status to back to server
+});
+socket.on('winch4Up', function (data) { //get button status from client
+  document.getElementById("winch4Up").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch4Up", data); //send push button status to back to server
+});
+socket.on('winch5Up', function (data) { //get button status from client
+  document.getElementById("winch5Up").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch5Up", data); //send push button status to back to server
+});
+socket.on('winch6Up', function (data) { //get button status from client
+  document.getElementById("winch6Up").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch6Up", data); //send push button status to back to server
+});
+socket.on('winch1Dw', function (data) { //get button status from client
+  document.getElementById("winch1Dw").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch1Dw", data); //send push button status to back to server
+});
+socket.on('winch2Dw', function (data) { //get button status from client
+  document.getElementById("winch2Dw").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch2Dw", data); //send push button status to back to server
+});
+socket.on('winch3Dw', function (data) { //get button status from client
+  document.getElementById("winch3Dw").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch3Dw", data); //send push button status to back to server
+});
+socket.on('winch4Dw', function (data) { //get button status from client
+  document.getElementById("winch4Dw").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch4Dw", data); //send push button status to back to server
+});
+socket.on('winch5Dw', function (data) { //get button status from client
+  document.getElementById("winch5Dw").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch5Dw", data); //send push button status to back to server
+});
+socket.on('winch6Dw', function (data) { //get button status from client
+  document.getElementById("winch6Dw").checked = data; //change checkbox according to push button on Raspberry Pi
+  socket.emit("winch6Dw", data); //send push button status to back to server
+});
+</script>
+</body>
+</html>
