@@ -62,107 +62,107 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   var winch6stvalue = 0;
   if( LED.readSync())
   {
-    socket.emit('light',1);
+    socket.emit('light',on);
   }else{
-    socket.emit('light',0);
+    socket.emit('light',off);
   }
   if( LIGHT1.readSync())
   {
-    socket.emit('light1',1);
+    socket.emit('light1',on);
   }else{
-    socket.emit('light1',0);
+    socket.emit('light1',off);
   }
   if( LIGHT2.readSync())
   {
-    socket.emit('light2',1);
+    socket.emit('light2',on);
   }else{
-    socket.emit('light2',0);
+    socket.emit('light2',off);
   }
   if( LIGHT3.readSync())
   {
-    socket.emit('light3',1);
+    socket.emit('light3',on);
   }else{
-    socket.emit('light3',0);
+    socket.emit('light3',off);
   }
 
   if(WINCH1UP.readSync())
   {
-    socket.emit('winch1Up',1);
+    socket.emit('winch1Up',on);
   }else{
-    socket.emit('winch1Up',0);
+    socket.emit('winch1Up',off);
   }
 
   if(WINCH2UP.readSync())
   {
-    socket.emit('winch2Up',1);
+    socket.emit('winch2Up',on);
   }else{
-    socket.emit('winch2Up',0);
+    socket.emit('winch2Up',off);
   }
   if(WINCH3UP.readSync())
   {
-    socket.emit('winch3Up',1);
+    socket.emit('winch3Up',on);
   }else{
-    socket.emit('winch3Up',0);
+    socket.emit('winch3Up',off);
   }
   if(WINCH4UP.readSync())
   {
-    socket.emit('winch4Up',1);
+    socket.emit('winch4Up',on);
   }else{
-    socket.emit('winch4Up',0);
+    socket.emit('winch4Up',off);
   }
   if(WINCH5UP.readSync())
   {
-    socket.emit('winch5Up',1);
+    socket.emit('winch5Up',on);
   }else{
-    socket.emit('winch5Up',0);
+    socket.emit('winch5Up',off);
   }
   if(WINCH6UP.readSync())
   {
-    socket.emit('winch6Up',1);
+    socket.emit('winch6Up',on);
   }else{
-    socket.emit('winch6Up',0);
+    socket.emit('winch6Up',off);
   }
 
   if(WINCH1DW.readSync())
   {
-    socket.emit('winch1Dw',1);
+    socket.emit('winch1Dw',on);
   }else{
-    socket.emit('winch1Dw',0);
+    socket.emit('winch1Dw',off);
   }
 
   if(WINCH2DW.readSync())
   {
-    socket.emit('winch2Dw',1);
+    socket.emit('winch2Dw',on);
   }else{
-    socket.emit('winch2Dw',0);
+    socket.emit('winch2Dw',off);
   }
 
   if(WINCH3DW.readSync())
   {
-    socket.emit('winch3Dw',1);
+    socket.emit('winch3Dw',on);
   }else{
-    socket.emit('winch3Dw',0);
+    socket.emit('winch3Dw',off);
   }
 
   if(WINCH4DW.readSync())
   {
-    socket.emit('winch4Dw',1);
+    socket.emit('winch4Dw',on);
   }else{
-    socket.emit('winch4Dw',0);
+    socket.emit('winch4Dw',off);
   }
 
   if(WINCH5DW.readSync())
   {
-    socket.emit('winch5Dw',1);
+    socket.emit('winch5Dw',on);
   }else{
-    socket.emit('winch5Dw',0);
+    socket.emit('winch5Dw',off);
   }
 
   if(WINCH6DW.readSync())
   {
-    socket.emit('winch6Dw',1);
+    socket.emit('winch6Dw',on);
   }else{
-    socket.emit('winch6Dw',0);
+    socket.emit('winch6Dw',off);
   }
 
 
