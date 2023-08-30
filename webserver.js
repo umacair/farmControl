@@ -198,40 +198,40 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   socket.on('winch1Up', function(data) { //get light switch status from client
     winch1upvalue = data;
     if (winch1upvalue == 1) { //only change LED if status has changed
-      WINCH1UP.writeSync(winch1upvalue); //turn LED on or off
-      WINCH1DW.writeSync(!winch1upvalue);
-      socket.emit('winch1Dw',off);
-      socket.emit('winch1St',off);
+      WINCH1UP.writeSync(!winch1upvalue); //turn LED on or off
+      WINCH1DW.writeSync(winch1upvalue);
+      socket.emit('winch1Dw',0);
+      socket.emit('winch1St',0);
     }
   });
 
   socket.on('winch1Dw', function(data) { //get light switch status from client
     winch1dwvalue = data;
     if (winch1dwvalue == 1) { //only change LED if status has changed
-      WINCH1DW.writeSync(winch1dwvalue); //turn LED on or off
-      WINCH1UP.writeSync(!winch1upvalue);
-      socket.emit('winch1Up',off);
-      socket.emit('winch1St',off);
+      WINCH1DW.writeSync(!winch1dwvalue); //turn LED on or off
+      WINCH1UP.writeSync(winch1upvalue);
+      socket.emit('winch1Up',0);
+      socket.emit('winch1St',0);
     }
   });
   
   socket.on('winch2Up', function(data) { //get light switch status from client
     winch2upvalue = data;
     if (winch2upvalue == 1) { //only change LED if status has changed
-      WINCH2UP.writeSync(winch2upvalue); //turn LED on or off
-      WINCH2DW.writeSync(!winch2upvalue);
-      socket.emit('winch2Dw',off);
-      socket.emit('winch2St',off);
+      WINCH2UP.writeSync(!winch2upvalue); //turn LED on or off
+      WINCH2DW.writeSync(winch2upvalue);
+      socket.emit('winch2Dw',0);
+      socket.emit('winch2St',0);
     }
   });
 
   socket.on('winch2Dw', function(data) { //get light switch status from client
     winch2dwvalue = data;
     if (winch2dwvalue == 1) { //only change LED if status has changed
-      WINCH2DW.writeSync(winch2dwvalue); //turn LED on or off
-      WINCH2UP.writeSync(!winch2dwvalue);
-      socket.emit('winch2Up',off);
-      socket.emit('winch2St',off);
+      WINCH2DW.writeSync(!winch2dwvalue); //turn LED on or off
+      WINCH2UP.writeSync(winch2dwvalue);
+      socket.emit('winch2Up',0);
+      socket.emit('winch2St',0);
     }
   });
 
@@ -239,20 +239,20 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   socket.on('winch3Up', function(data) { //get light switch status from client
     winch3upvalue = data;
     if (winch3upvalue == 1) { //only change LED if status has changed
-      WINCH3UP.writeSync(winch3upvalue); //turn LED on or off
-      WINCH3DW.writeSync(!winch3upvalue);
-      socket.emit('winch3Dw',off);
-      socket.emit('winch3St',off);
+      WINCH3UP.writeSync(!winch3upvalue); //turn LED on or off
+      WINCH3DW.writeSync(winch3upvalue);
+      socket.emit('winch3Dw',0);
+      socket.emit('winch3St',0);
     }
   });
 
   socket.on('winch3Dw', function(data) { //get light switch status from client
     winch3dwvalue = data;
     if (winch3dwvalue == 1) { //only change LED if status has changed
-      WINCH3DW.writeSync(winch3dwvalue); //turn LED on or off
-      WINCH3UP.writeSync(!winch3dwvalue);
-      socket.emit('winch3Up',off);
-      socket.emit('winch3St',off);
+      WINCH3DW.writeSync(!winch3dwvalue); //turn LED on or off
+      WINCH3UP.writeSync(winch3dwvalue);
+      socket.emit('winch3Up',0);
+      socket.emit('winch3St',0);
     }
   });
 
@@ -260,20 +260,20 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   socket.on('winch4Up', function(data) { //get light switch status from client
     winch4upvalue = data;
     if (winch4upvalue == 1) { //only change LED if status has changed
-      WINCH4UP.writeSync(winch4upvalue); //turn LED on or off
-      WINCH4DW.writeSync(!winch4upvalue);
-      socket.emit('winch4Dw',off);
-      socket.emit('winch4St',off);
+      WINCH4UP.writeSync(!winch4upvalue); //turn LED on or off
+      WINCH4DW.writeSync(winch4upvalue);
+      socket.emit('winch4Dw',0);
+      socket.emit('winch4St',0);
     }
   });
 
   socket.on('winch4Dw', function(data) { //get light switch status from client
     winch4dwvalue = data;
     if (winch4dwvalue == 1) { //only change LED if status has changed
-      WINCH4DW.writeSync(winch4dwvalue); //turn LED on or off
-      WINCH4UP.writeSync(!winch4dwvalue);
-      socket.emit('winch4Up',off);
-      socket.emit('winch4St',off);
+      WINCH4DW.writeSync(!winch4dwvalue); //turn LED on or off
+      WINCH4UP.writeSync(winch4dwvalue);
+      socket.emit('winch4Up',0);
+      socket.emit('winch4St',0);
     }
   });
 
@@ -281,20 +281,20 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   socket.on('winch5Up', function(data) { //get light switch status from client
     winch5upvalue = data;
     if (winch5upvalue == 1) { //only change LED if status has changed
-      WINCH5UP.writeSync(winch5upvalue); //turn LED on or off
-      WINCH5DW.writeSync(!winch5upvalue);
-      socket.emit('winch5Dw',off);
-      socket.emit('winch5St',off);
+      WINCH5UP.writeSync(!winch5upvalue); //turn LED on or off
+      WINCH5DW.writeSync(winch5upvalue);
+      socket.emit('winch5Dw',0);
+      socket.emit('winch5St',0);
     }
   });
 
   socket.on('winch5Dw', function(data) { //get light switch status from client
     winch5dwvalue = data;
     if (winch5dwvalue == 1) { //only change LED if status has changed
-      WINCH5DW.writeSync(winch5dwvalue); //turn LED on or off
-      WINCH5UP.writeSync(!winch5dwvalue);
-      socket.emit('winch5Up',off);
-      socket.emit('winch5St',off);
+      WINCH5DW.writeSync(!winch5dwvalue); //turn LED on or off
+      WINCH5UP.writeSync(winch5dwvalue);
+      socket.emit('winch5Up',0);
+      socket.emit('winch5St',0);
     }
   });
 
@@ -302,75 +302,75 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   socket.on('winch6Up', function(data) { //get light switch status from client
     winch6upvalue = data;
     if (winch6upvalue == 1) { //only change LED if status has changed
-      WINCH6UP.writeSync(winch6upvalue); //turn LED on or off
-      WINCH6DW.writeSync(!winch6upvalue);
-      socket.emit('winch6Dw',off);
-      socket.emit('winch6St',off);
+      WINCH6UP.writeSync(!winch6upvalue); //turn LED on or off
+      WINCH6DW.writeSync(winch6upvalue);
+      socket.emit('winch6Dw',0);
+      socket.emit('winch6St',0);
     }
   });
 
   socket.on('winch6Dw', function(data) { //get light switch status from client
     winch6dwvalue = data;
     if (winch6dwvalue == 1) { //only change LED if status has changed
-      WINCH6DW.writeSync(winch6dwvalue); //turn LED on or off
-      WINCH6UP.writeSync(!winch6dwvalue);
-      socket.emit('winch6Up',off);
-      socket.emit('winch6St',off);
+      WINCH6DW.writeSync(!winch6dwvalue); //turn LED on or off
+      WINCH6UP.writeSync(winch6dwvalue);
+      socket.emit('winch6Up',0);
+      socket.emit('winch6St',0);
     }
   });
   socket.on('winch1St', function(data) { //get light switch status from client
     winch1stvalue = data;
     if (winch1stvalue == 1) { //only change LED if status has changed
-      WINCH1DW.writeSync(0); //turn LED on or off
-      WINCH1UP.writeSync(0);
-      socket.emit('winch1Dw',off);
-      socket.emit('winch1Up',off);
+      WINCH1DW.writeSync(winch1stvalue); //turn LED on or off
+      WINCH1UP.writeSync(winch1stvalue);
+      socket.emit('winch1Dw',0);
+      socket.emit('winch1Up',0);
     }
   });
   socket.on('winch2St', function(data) { //get light switch status from client
     winch2stvalue = data;
     if (winch2stvalue == 1) { //only change LED if status has changed
-      WINCH2DW.writeSync(0); //turn LED on or off
-      WINCH2UP.writeSync(0);
-      socket.emit('winch2Dw',off);
-      socket.emit('winch2Up',off);
+      WINCH2DW.writeSync(winch1stvalue); //turn LED on or off
+      WINCH2UP.writeSync(winch1stvalue);
+      socket.emit('winch2Dw',0);
+      socket.emit('winch2Up',0);
     }
   });
   socket.on('winch3St', function(data) { //get light switch status from client
     winch3stvalue = data;
     if (winch3stvalue == 1) { //only change LED if status has changed
-      WINCH3DW.writeSync(0); //turn LED on or off
-      WINCH3UP.writeSync(0);
-      socket.emit('winch3Dw',off);
-      socket.emit('winch3Up',off);
+      WINCH3DW.writeSync(winch1stvalue); //turn LED on or off
+      WINCH3UP.writeSync(winch1stvalue);
+      socket.emit('winch3Dw',0);
+      socket.emit('winch3Up',0);
     }
   });
   socket.on('winch4St', function(data) { //get light switch status from client
     winch4stvalue = data;
     if (winch4stvalue == 1) { //only change LED if status has changed
-      WINCH4DW.writeSync(0); //turn LED on or off
-      WINCH4UP.writeSync(0);
-      socket.emit('winch4Dw',off);
-      socket.emit('winch4Up',off);
+      WINCH4DW.writeSync(winch1stvalue); //turn LED on or off
+      WINCH4UP.writeSync(winch1stvalue);
+      socket.emit('winch4Dw',0);
+      socket.emit('winch4Up',0);
     }
   });
   socket.on('winch5St', function(data) { //get light switch status from client
     winch5stvalue = data;
     if (winch5stvalue == 1) { //only change LED if status has changed
-      WINCH5DW.writeSync(0); //turn LED on or off
-      WINCH5UP.writeSync(0);
-      socket.emit('winch5Dw',off);
-      socket.emit('winch5Up',off);
+      WINCH5DW.writeSync(winch1stvalue); //turn LED on or off
+      WINCH5UP.writeSync(winch1stvalue);
+      socket.emit('winch5Dw',0);
+      socket.emit('winch5Up',0);
     }
   });
   socket.on('winch6St', function(data) { //get light switch status from client
     winch6stvalue = data;
     if (winch6stvalue == 1) 
     { //only change LED if status has changed
-      WINCH6DW.writeSync(0); //turn LED on or off
-      WINCH6UP.writeSync(0);
-      socket.emit('winch6Dw',off);
-      socket.emit('winch6Up',off);
+      WINCH6DW.writeSync(winch1stvalue); //turn LED on or off
+      WINCH6UP.writeSync(winch1stvalue);
+      socket.emit('winch6Dw',0);
+      socket.emit('winch6Up',0);
     }
   });
 
@@ -381,38 +381,38 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
 });
 // gpio 핀 초기화
 process.on('SIGINT', function () { //on ctrl+c
-  LED.writeSync(0); // Turn LED off
+  LED.writeSync(1); // Turn LED off
   LED.unexport(); // Unexport LED GPIO to free resources
-  LIGHT1.writeSync(0); // Turn LED off
+  LIGHT1.writeSync(1); // Turn LED off
   LIGHT1.unexport(); // Unexport LED GPIO to free resources
-  LIGHT2.writeSync(0); // Turn LED off
+  LIGHT2.writeSync(1); // Turn LED off
   LIGHT2.unexport(); // Unexport LED GPIO to free resources
-  LIGHT3.writeSync(0); // Turn LED off
+  LIGHT3.writeSync(1); // Turn LED off
   LIGHT3.unexport(); // Unexport LED GPIO to free resources
-  WINCH1UP.writeSync(0); // Turn LED off
+  WINCH1UP.writeSync(1); // Turn LED off
   WINCH1UP.unexport(); // Unexport LED GPIO to free resources
-  WINCH2UP.writeSync(0); // Turn LED off
+  WINCH2UP.writeSync(1); // Turn LED off
   WINCH2UP.unexport(); // Unexport LED GPIO to free resources
-  WINCH3UP.writeSync(0); // Turn LED off
+  WINCH3UP.writeSync(1); // Turn LED off
   WINCH3UP.unexport(); // Unexport LED GPIO to free resources
-  WINCH4UP.writeSync(0); // Turn LED off
+  WINCH4UP.writeSync(1); // Turn LED off
   WINCH4UP.unexport(); // Unexport LED GPIO to free resources
-  WINCH5UP.writeSync(0); // Turn LED off
+  WINCH5UP.writeSync(1); // Turn LED off
   WINCH5UP.unexport(); // Unexport LED GPIO to free resources
-  WINCH6UP.writeSync(0); // Turn LED off
+  WINCH6UP.writeSync(1); // Turn LED off
   WINCH6UP.unexport(); // Unexport LED GPIO to free resources
 
-  WINCH1DW.writeSync(0); // Turn LED off
+  WINCH1DW.writeSync(1); // Turn LED off
   WINCH1DW.unexport(); // Unexport LED GPIO to free resources
-  WINCH2DW.writeSync(0); // Turn LED off
+  WINCH2DW.writeSync(1); // Turn LED off
   WINCH2DW.unexport(); // Unexport LED GPIO to free resources
-  WINCH3DW.writeSync(0); // Turn LED off
+  WINCH3DW.writeSync(1); // Turn LED off
   WINCH3DW.unexport(); // Unexport LED GPIO to free resources
-  WINCH4DW.writeSync(0); // Turn LED off
+  WINCH4DW.writeSync(1); // Turn LED off
   WINCH4DW.unexport(); // Unexport LED GPIO to free resources
-  WINCH5DW.writeSync(0); // Turn LED off
+  WINCH5DW.writeSync(1); // Turn LED off
   WINCH5DW.unexport(); // Unexport LED GPIO to free resources
-  WINCH6DW.writeSync(0); // Turn LED off
+  WINCH6DW.writeSync(1); // Turn LED off
   WINCH6DW.unexport(); // Unexport LED GPIO to free resources  
   
   process.exit(); //exit completely
