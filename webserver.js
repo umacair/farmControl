@@ -64,10 +64,10 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   if( LED.readSync())
   {
     first =0;
-    socket.emit('light',off);
+    socket.emit('light',on);
   }else{
     first =0;
-    socket.emit('light',on);
+    socket.emit('light',off);
   }
   if( LIGHT1.readSync())
   {
