@@ -165,16 +165,36 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
     socket.emit('winch6Dw',off);
   }
 
+  socket.on('light', function(data) { //get light switch status from client
+    if(LED.readSync()){
+      if(data){
+        LED.writeSync(0); //turn LED on or of
 
+      }else{
+      }
 
+    }else{
+      if(data){
 
+      }else{
+        LED.writeSync(1); //turn LED on or of
+
+      }
+
+    }
+    lightvalue = data;
+    if (lightvalue != LED.readSync()) { //only change LED if status has changed
+    }
+  });
+
+/*
   socket.on('light', function(data) { //get light switch status from client
     lightvalue = data;
     if (lightvalue != LED.readSync()) { //only change LED if status has changed
         LED.writeSync(lightvalue); //turn LED on or of
     }
   });
-
+*/
   socket.on('light1', function(data) { //get light switch status from client
     light1value = data;
     if (light1value != !LIGHT1.readSync()) { //only change LED if status has changed
