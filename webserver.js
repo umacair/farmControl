@@ -21,6 +21,9 @@ var WINCH6DW = new Gpio(21,'out');
 var on = 0;
 var off = 1;
 var first = 0;
+var first1 = 0;
+var first2 = 0;
+var first3 = 0;
 
 //var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
@@ -71,20 +74,26 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   }
   if( LIGHT1.readSync())
   {
+    first1 =0;
     socket.emit('light1',on);
   }else{
+    first1 =0;
     socket.emit('light1',off);
   }
   if( LIGHT2.readSync())
   {
+    first2 =0;
     socket.emit('light2',on);
   }else{
+    first2 =0;
     socket.emit('light2',off);
   }
   if( LIGHT3.readSync())
   {
+    first3 =0;
     socket.emit('light3',on);
   }else{
+    first3 =0;
     socket.emit('light3',off);
   }
 
@@ -186,13 +195,82 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
         }
   
       }
-      lightvalue = data;
-      if (lightvalue != LED.readSync()) { //only change LED if status has changed
-      }
-  
-
     }else{
       first = 1;
+
+    }
+  });
+
+  socket.on('light1', function(data) { //get light switch status from client
+    if(first1){
+      if(LIGHT1.readSync()){
+        if(data){
+          LIGHT1.writeSync(0); //turn LED on or of
+  
+        }else{
+        }
+  
+      }else{
+        if(data){
+  
+        }else{
+          LIGHT1.writeSync(1); //turn LED on or of
+  
+        }
+  
+      }
+    }else{
+      first1 = 1;
+
+    }
+  });
+
+  socket.on('light2', function(data) { //get light switch status from client
+    if(first2){
+      if(LIGHT2.readSync()){
+        if(data){
+          LIGHT2.writeSync(0); //turn LED on or of
+  
+        }else{
+        }
+  
+      }else{
+        if(data){
+  
+        }else{
+          LIGHT2.writeSync(1); //turn LED on or of
+  
+        }
+  
+      }
+
+    }else{
+      first2 = 1;
+
+    }
+  });
+
+
+  socket.on('light3', function(data) { //get light switch status from client
+    if(first3){
+      if(LIGHT3.readSync()){
+        if(data){
+          LIGHT3.writeSync(0); //turn LED on or of
+  
+        }else{
+        }
+  
+      }else{
+        if(data){
+  
+        }else{
+          LIGHT3.writeSync(1); //turn LED on or of
+  
+        }
+  
+      }
+    }else{
+      first3 = 1;
 
     }
   });
@@ -204,7 +282,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
         LED.writeSync(lightvalue); //turn LED on or of
     }
   });
-*/
+
   socket.on('light1', function(data) { //get light switch status from client
     light1value = data;
     if (light1value != !LIGHT1.readSync()) { //only change LED if status has changed
@@ -224,7 +302,7 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
       LIGHT3.writeSync(!light3value); //turn LED on or off
     }
   });
-
+*/
   socket.on('winch1Up', function(data) { //get light switch status from client
     winch1upvalue = data;
     if (winch1upvalue == 1) { //only change LED if status has changed
