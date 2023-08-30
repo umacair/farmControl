@@ -20,6 +20,7 @@ var WINCH5DW = new Gpio(20,'out');
 var WINCH6DW = new Gpio(21,'out');
 var on = 0;
 var off = 1;
+var first = 0;
 
 //var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
@@ -166,24 +167,31 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   }
 
   socket.on('light', function(data) { //get light switch status from client
-    if(LED.readSync()){
-      if(data){
-        LED.writeSync(0); //turn LED on or of
-
+    if(first){
+      if(LED.readSync()){
+        if(data){
+          LED.writeSync(0); //turn LED on or of
+  
+        }else{
+        }
+  
       }else{
+        if(data){
+  
+        }else{
+          LED.writeSync(1); //turn LED on or of
+  
+        }
+  
       }
+      lightvalue = data;
+      if (lightvalue != LED.readSync()) { //only change LED if status has changed
+      }
+  
 
     }else{
-      if(data){
+      first = 1;
 
-      }else{
-        LED.writeSync(1); //turn LED on or of
-
-      }
-
-    }
-    lightvalue = data;
-    if (lightvalue != LED.readSync()) { //only change LED if status has changed
     }
   });
 
