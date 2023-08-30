@@ -60,25 +60,25 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   var winch4stvalue = 0;
   var winch5stvalue = 0;
   var winch6stvalue = 0;
-  if( LED.readSync())
+  if( !LED.readSync())
   {
     socket.emit('light',on);
   }else{
     socket.emit('light',off);
   }
-  if( LIGHT1.readSync())
+  if( !LIGHT1.readSync())
   {
     socket.emit('light1',on);
   }else{
     socket.emit('light1',off);
   }
-  if( LIGHT2.readSync())
+  if( !LIGHT2.readSync())
   {
     socket.emit('light2',on);
   }else{
     socket.emit('light2',off);
   }
-  if( LIGHT3.readSync())
+  if( !LIGHT3.readSync())
   {
     socket.emit('light3',on);
   }else{
