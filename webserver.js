@@ -63,8 +63,10 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   var winch6stvalue = 0;
   if( LED.readSync())
   {
+    first =0;
     socket.emit('light',off);
   }else{
+    first =0;
     socket.emit('light',on);
   }
   if( LIGHT1.readSync())
