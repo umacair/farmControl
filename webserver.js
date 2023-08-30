@@ -171,33 +171,27 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
   socket.on('light', function(data) { //get light switch status from client
     lightvalue = data;
     if (lightvalue != LED.readSync()) { //only change LED if status has changed
-      if(lightvalue==1)
-      {
-        LED.writeSync(0); //turn LED on or off
-      }else{
-        LED.writeSync(1); //turn LED on or off
-      }
-
+        LED.writeSync(lightvalue); //turn LED on or of
     }
   });
 
   socket.on('light1', function(data) { //get light switch status from client
     light1value = data;
-    if (light1value != LIGHT1.readSync()) { //only change LED if status has changed
-      LIGHT1.writeSync(!light1value); //turn LED on or off
+    if (light1value == LIGHT1.readSync()) { //only change LED if status has changed
+      LIGHT1.writeSync(light1value); //turn LED on or off
     }
   });
   socket.on('light2', function(data) { //get light switch status from client
     light2value = data;
-    if (light2value != LIGHT2.readSync()) { //only change LED if status has changed
-      LIGHT2.writeSync(!light2value); //turn LED on or off
+    if (light2value == LIGHT2.readSync()) { //only change LED if status has changed
+      LIGHT2.writeSync(light2value); //turn LED on or off
     }
   });
 
   socket.on('light3', function(data) { //get light switch status from client
     light3value = data;
-    if (light3value != LIGHT3.readSync()) { //only change LED if status has changed
-      LIGHT3.writeSync(!light3value); //turn LED on or off
+    if (light3value == LIGHT3.readSync()) { //only change LED if status has changed
+      LIGHT3.writeSync(light3value); //turn LED on or off
     }
   });
 
@@ -211,16 +205,16 @@ io.sockets.on('connection', function (socket) {// WebSocket Connection
     }
   });
 
+
   socket.on('winch1Dw', function(data) { //get light switch status from client
     winch1dwvalue = data;
     if (winch1dwvalue == 1) { //only change LED if status has changed
       WINCH1DW.writeSync(!winch1dwvalue); //turn LED on or off
-      WINCH1UP.writeSync(winch1upvalue);
+      WINCH1UP.writeSync(winch1dwvalue);
       socket.emit('winch1Up',0);
       socket.emit('winch1St',0);
     }
   });
-
 
   
   socket.on('winch2Up', function(data) { //get light switch status from client
