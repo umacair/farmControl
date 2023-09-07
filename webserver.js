@@ -39,7 +39,7 @@ function handler (req, res) { //create server
     res.write(data); //write data from index.html
     return res.end();
   });
-
+/*
   fs.readFile(__dirname + '/public/style.css', function(err, datacss) { //read file index.html in public folder
     if (err) {
       res.writeHead(404, {'Content-Type': 'text/html'}); //display 404 on error
@@ -49,7 +49,7 @@ function handler (req, res) { //create server
     res.write(datacss); //write data from index.html
     return res.end();
   });
-
+*/
 }
 
 /*
