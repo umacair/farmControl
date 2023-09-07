@@ -26,9 +26,9 @@ var first2 = 0;
 var first3 = 0;
 
 //var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
-/*
-http.listen(8080); //listen to port 8080
 
+http.listen(8080); //listen to port 8080
+/*
 function handler (req, res) { //create server
   fs.readFile(__dirname + '/public/index.html', function(err, data) { //read file index.html in public folder
     if (err) {
@@ -46,9 +46,10 @@ const express = require("express");
 const app = express();
 
 app.use(express.static('public'));
+app.use(express.static('./css/css'));
 
 app.get("/", function(req, res){
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.listen(8080, () => {
