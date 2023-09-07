@@ -28,7 +28,7 @@ var first3 = 0;
 //var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
 
 http.listen(8080); //listen to port 8080
-/*
+
 function handler (req, res) { //create server
   fs.readFile(__dirname + '/public/index.html', function(err, data) { //read file index.html in public folder
     if (err) {
@@ -39,9 +39,20 @@ function handler (req, res) { //create server
     res.write(data); //write data from index.html
     return res.end();
   });
-}
-*/
 
+  fs.readFile(__dirname + '/public/css/style.css', function(err, data) { //read file index.html in public folder
+    if (err) {
+      res.writeHead(404, {'Content-Type': 'text/html'}); //display 404 on error
+      return res.end("404 Not Found");
+    }
+    res.writeHead(200, {'Content-Type': 'text/html'}); //write HTML
+    res.write(data); //write data from index.html
+    return res.end();
+  });
+
+}
+
+/*
 const express = require("express");
 const app = express();
 
@@ -55,7 +66,7 @@ app.get("/", function(req, res){
 app.listen(8080, () => {
   console.log("IHMS ON");
 })
-
+*/
 io.sockets.on('connection', function (socket) {// WebSocket Connection
   var lightvalue = 0; //static variable for current status
   var light1value = 0;
