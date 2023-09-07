@@ -26,7 +26,7 @@ var first2 = 0;
 var first3 = 0;
 
 //var pushButton = new Gpio(17, 'in', 'both'); //use GPIO pin 17 as input, and 'both' button presses, and releases should be handled
-
+/*
 http.listen(8080); //listen to port 8080
 
 function handler (req, res) { //create server
@@ -40,6 +40,20 @@ function handler (req, res) { //create server
     return res.end();
   });
 }
+*/
+
+const express = require("express");
+const app = express();
+
+app.use(express.static('public'));
+
+app.get("/", function(req, res){
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.listen(8080, () => {
+  console.log("IHMS ON");
+})
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
   var lightvalue = 0; //static variable for current status
